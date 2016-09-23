@@ -4,11 +4,6 @@ import tflearn
 from tflearn.data_utils import load_csv
 data, labels = load_csv('spambase.data', categorical_labels=True, n_classes=2)
 
-def preprocess(data):
-	return
-
-data = preprocess(data)
-
 # Build neural network
 net = tflearn.input_data(shape=[None, 57])
 net = tflearn.fully_connected(net, 32)
