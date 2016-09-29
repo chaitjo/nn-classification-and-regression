@@ -3,6 +3,7 @@ import tflearn
 
 from tflearn.data_utils import load_csv
 data, labels = load_csv('spambase.data', has_header=False, categorical_labels=True, n_classes=2)
+data = np.array(data).astype(np.float)
 
 # Define data preprocessing
 spam_prep = tflearn.data_preprocessing.DataPreprocessing()
