@@ -11,8 +11,8 @@ spam_prep.add_featurewise_stdnorm()
 
 # Build neural network
 net = tflearn.input_data(shape=[None, 57], data_preprocessing=spam_prep)
-net = tflearn.fully_connected(net, 32, activation='linear', bias=True, weights_init='truncated_normal', bias_init='zeroes', regularizer='L2', weight_decay=0.001)
-net = tflearn.fully_connected(net, 32, activation='linear', bias=True, weights_init='truncated_normal', bias_init='zeroes', regularizer='L2', weight_decay=0.001)
+net = tflearn.fully_connected(net, 32, activation='linear', bias=True, weights_init='truncated_normal', bias_init='zeros', regularizer='L2', weight_decay=0.001)
+net = tflearn.fully_connected(net, 32, activation='linear', bias=True, weights_init='truncated_normal', bias_init='zeros', regularizer='L2', weight_decay=0.001)
 net = tflearn.dropout(net, keep_prob=0.5)
 net = tflearn.fully_connected(net, 2, activation='softmax')
 net = tflearn.regression(net)
