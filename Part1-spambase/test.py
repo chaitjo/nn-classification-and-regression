@@ -24,4 +24,4 @@ model = tflearn.DNN(net)
 model.fit(data, labels, n_epoch=10, batch_size=16, show_metric=True)
 
 test = [0,0.64,0.64,0,0.32,0,0,0,0,0,0,0.64,0,0,0,0.32,0,1.29,1.93,0,0.96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.778,0,0,3.756,61,278]
-print model.predict(test)
+print model.predict([test])
