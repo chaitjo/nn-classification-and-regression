@@ -29,8 +29,7 @@ softmax = tflearn.fully_connected(dropout2, 2, activation='softmax',
 
 net = tflearn.regression(softmax, optimizer='adam', 
 						loss='categorical_crossentropy', metric='accuracy', 
-						learning_rate=0.001, 
-						to_one_hot=True, n_classes=2)
+						learning_rate=0.001) #, to_one_hot=True, n_classes=2)
 
 # Define model
 model = tflearn.DNN(net, 
@@ -38,14 +37,10 @@ model = tflearn.DNN(net,
 					checkpoint_path='runs/checkpoints', best_checkpoint_path='runs/best_checkpoint', best_val_accuracy=0.8)
 
 # Start training (apply gradient descent algorithm)
-# model.fit(data, labels, 
-# 			n_epoch=10, batch_size=16, validation_set=0.2, 
-# 			show_metric=True, shuffle=True, 
-# 			snapshot_epoch=True, snapshot_step=100)
-
 model.fit(data, labels, 
-			n_epoch=10, batch_size=16, 
-			show_metric=True)
+			n_epoch=10, batch_size=16, validation_set=0.2, 
+			show_metric=True, shuffle=True, 
+			snapshot_epoch=True, snapshot_step=100)
 
 # Test with dummy data
 test = [[0,0.64,0.64,0,0.32,0,0,0,0,0,0,0.64,0,0,0,0.32,0,1.29,1.93,0,0.96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.778,0,0,3.756,61,278]]
