@@ -38,10 +38,14 @@ model = tflearn.DNN(net,
 					checkpoint_path='runs/checkpoints', best_checkpoint_path='runs/best_checkpoint', best_val_accuracy=0.8)
 
 # Start training (apply gradient descent algorithm)
+# model.fit(data, labels, 
+# 			n_epoch=10, batch_size=16, validation_set=0.2, 
+# 			show_metric=True, shuffle=True, 
+# 			snapshot_epoch=True, snapshot_step=100)
+
 model.fit(data, labels, 
-			n_epoch=10, batch_size=16, validation_set=0.2, 
-			show_metric=True, shuffle=True, 
-			snapshot_epoch=True, snapshot_step=100)
+			n_epoch=10, batch_size=16, 
+			show_metric=True)
 
 # Test with dummy data
 test = [[0,0.64,0.64,0,0.32,0,0,0,0,0,0,0.64,0,0,0,0.32,0,1.29,1.93,0,0.96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.778,0,0,3.756,61,278]]
