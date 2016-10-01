@@ -23,7 +23,7 @@ dense2 = tflearn.fully_connected(dropout1, 32, activation='relu',
 								regularizer='L2', weight_decay=0.001)
 dropout2 = tflearn.dropout(dense2, keep_prob=0.5)
 
-softmax = tflearn.fully_connected(net, 2, activation='softmax',
+softmax = tflearn.fully_connected(dropout2, 2, activation='softmax',
 								bias=True, weights_init='truncated_normal', bias_init='zeros',
 								regularizer='L2', weight_decay=0.001)
 
