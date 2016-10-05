@@ -1,6 +1,5 @@
 import numpy as np
 import tflearn
-import sklearn
 
 #Load data
 from tflearn.data_utils import load_csv
@@ -15,7 +14,7 @@ data_shuffled = data[shuffle_indices]
 labels_shuffled = labels[shuffle_indices]
 
 from sklearn.cross_validation import train_test_split
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.33, random_state=42)
+train_data, test_data, train_data, test_data = train_test_split(data_shuffled, labels_shuffled, test_size = 0.2, random_state=42)
 
 featurewise_mean = np.mean(train_data, axis=0)
 featurewise_std = np.std(train_data, axis=0)
@@ -53,7 +52,7 @@ model = tflearn.DNN(net,
 
 # Start training (apply gradient descent algorithm)
 model.fit(data, labels, 
-			n_epoch=200, batch_size=None, validation_set=[val_data, val_labels], 
+			n_epoch=200, batch_size=None, validation_set=[test_data, test_labels], 
 			show_metric=True, snapshot_step=100)
 
 # Test with dummy data
