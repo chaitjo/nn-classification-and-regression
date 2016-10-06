@@ -1,0 +1,5 @@
+activation: tanh > relu > sigmoid
+optimizer: adam > sgd
+batch or non-batched: similar, batched takes longer to train, non-batched has lower loss
+hidden layers: 3 > 2 (try different number of neurons)
+learning rate: 0.002 > 0.004 > 0.001 > 0.01 (lesser loss)

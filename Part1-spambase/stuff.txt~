@@ -1,0 +1,10 @@
+activation: relu > tanh > sigmoid
+optimizer: adam > sgd
+batch or online: online: batched takes longer to train, online has lower loss
+hidden layers: 2 > 1 > 3 > 4
+number of neurons (2 layers): 50-30 ~ 70-40 (50-30 has better accuracy on val, 70-40 on training) > 40-15
+learning rate: 0.002 ~ 0.001 (0.002 has better accuracy) > 0.005 > 0.01 (lesser loss)
+
+dropout: https://www.reddit.com/r/MachineLearning/comments/3oztvk/why_50_when_using_dropout/
+
+no of hidden layers: http://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw
