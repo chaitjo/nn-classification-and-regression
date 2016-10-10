@@ -1,7 +1,0 @@
-activation: tanh > relu > sigmoid
-optimizer: adam > sgd
-batch or online: similar, batched takes longer to train, online has lower loss
-hidden layers: 3 > 2 (try different number of neurons)
-learning rate: 0.002 > 0.004 > 0.001 > 0.01 (lesser loss)
-
-dropout: https://www.reddit.com/r/MachineLearning/comments/3oztvk/why_50_when_using_dropout/
